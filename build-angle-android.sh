@@ -33,12 +33,11 @@ COMMON_ARGS='
     angle_build_tests=false
     chrome_pgo_phase=0
     is_official_build=true
-    use_custom_libcxx=false
     build_with_chromium=false
     is_clang=true
     clang_use_chrome_plugins=false
 '
-    # 
+    # use_custom_libcxx=false
 
 
 # Build for Android x64
