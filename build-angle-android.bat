@@ -77,4 +77,4 @@ cd %SCRIPT_DIR%
 
 echo.
 echo Android builds complete! Files are available in:
-echo   - .\out/Android
+echo   - .\out\Android
