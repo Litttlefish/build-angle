@@ -38,9 +38,9 @@ if not exist chrome\VERSION (
 
 :: Common GN args for all Windows builds
 set COMMON_ARGS=^
-    android_static_analysis=on ^
-    target_os=android ^
-    target_cpu=arm ^
+    android_static_analysis="on" ^
+    target_os="android" ^
+    target_cpu="arm" ^
     is_debug=false ^
     angle_enable_cl=true ^
     dcheck_always_on=true ^
