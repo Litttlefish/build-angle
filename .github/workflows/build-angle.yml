@@ -219,6 +219,9 @@ jobs:
           chmod +x setup-angle-mac.sh
           chmod +x build-angle-android.sh
           
+      - name: Get Ninja
+        uses: turtlesec-no/get-ninja@1.1.0
+          
       - name: Build ANGLE for Android with specific commit
         env:
           ANGLE_COMMIT: ${{ needs.get-angle-commit.outputs.angle_commit }}
