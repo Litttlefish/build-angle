@@ -216,7 +216,7 @@ jobs:
 
       - name: Make Scripts Executable
         run: |
-          chmod +x setup-angle-mac.sh
+          chmod +x setup-angle-linux.sh
           chmod +x build-angle-android.sh
           
       - name: Get Ninja
