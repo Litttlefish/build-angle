@@ -22,10 +22,10 @@ on:
   #     - 'setup-angle-*.bat'
   workflow_dispatch:
   # Inputs the workflow accepts.
-  inputs:
-    tag_name:
-      description: 'random info here'
-      required: false
+    inputs:
+      tag_name:
+        description: 'random info here'
+        required: false
 
 # Add permissions at the workflow level
 permissions:
