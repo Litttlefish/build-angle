@@ -33,56 +33,7 @@ permissions:
   packages: read
 
 jobs:
-  get-angle-commit:
-    name: Determine ANGLE Commit Hash and Check Existing Release
-    runs-on: ubuntu-latest
-    outputs:
-      angle_commit: ${{ steps.get-commit.outputs.angle_commit }}
-      angle_commit_short: ${{ steps.get-commit.outputs.angle_commit_short }}
-      release_exists: ${{ steps.check-release.outputs.release_exists }}
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Install Git
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y git
-
-      - name: Get Latest ANGLE Commit
-        id: get-commit
-        run: |
-          # Clone just enough of the ANGLE repo to get the latest commit
-          git clone --depth 1 https://chromium.googlesource.com/angle/angle temp-angle
-          cd temp-angle
-          ANGLE_COMMIT=$(git rev-parse HEAD)
-          ANGLE_COMMIT_SHORT=$(git rev-parse --short HEAD)
-          echo "angle_commit=$ANGLE_COMMIT" >> $GITHUB_OUTPUT
-          echo "angle_commit_short=$ANGLE_COMMIT_SHORT" >> $GITHUB_OUTPUT
-          echo "ANGLE commit hash: $ANGLE_COMMIT"
-          echo "ANGLE short commit hash: $ANGLE_COMMIT_SHORT"
-          cd ..
-          rm -rf temp-angle
-
-      - name: Check if Release Exists
-        id: check-release
-        run: |
-          RELEASE_EXISTS=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/releases/tags/angle-${{ steps.get-commit.outputs.angle_commit_short }}" | \
-            jq -r '.id')
-
-          if [[ "$RELEASE_EXISTS" == "null" || "$RELEASE_EXISTS" == "" ]]; then
-            echo "Release does not exist"
-            echo "release_exists=false" >> $GITHUB_OUTPUT
-          else
-            echo "Release already exists with ID: $RELEASE_EXISTS"
-            echo "release_exists=true" >> $GITHUB_OUTPUT
-          fi
+  
 
   # build-mac:
   #   name: Build ANGLE for macOS
