@@ -45,7 +45,7 @@ COMMON_ARGS='
 echo "Building ANGLE for Android x64..."
 gn gen out/Android --args="$COMMON_ARGS"
 
-ninja -C out/Android
+autoninja -C out/Android
 
 # Return to script directory
 cd $SCRIPT_DIR
