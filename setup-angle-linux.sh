@@ -5,17 +5,10 @@ set -e
 ANGLE_COMMIT=${ANGLE_COMMIT:-""}
 DEPOT_TOOLS_COMMIT=${DEPOT_TOOLS_COMMIT:-""}
 
-# Check if homebrew is installed
-if ! command -v brew &> /dev/null; then
-    echo "Homebrew is not installed. Please install it first:"
-    echo "/bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
-    exit 1
-fi
-
 # Install ninja if not available
 if ! command -v ninja &> /dev/null; then
     echo "Installing ninja..."
-    brew install ninja
+    apt install ninja
 fi
 
 # Get current directory
