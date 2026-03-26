@@ -242,7 +242,6 @@ jobs:
           find angle/out/Android -name "Headers" | xargs ls -la
 
       - name: Create Windows Archives
-        shell: powershell
         run: |
           # Create commit.txt files with the ANGLE commit hash
           echo "${{ needs.get-angle-commit.outputs.angle_commit }}" > angle/out/Android/commit.txt
