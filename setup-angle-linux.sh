@@ -79,6 +79,7 @@ gclient config --unmanaged https://chromium.googlesource.com/angle/angle
 
 # Create a .gclient file with proper setup
 cat > .gclient << EOL
+target_os = ['android']
 solutions = [
   {
     "name": ".",
