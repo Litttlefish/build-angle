@@ -238,7 +238,7 @@ jobs:
       - name: Upload Android Archive
         uses: actions/upload-artifact@v4
         with:
-          name: angle-windows-x64
+          name: angle-android-arm
           path: angle/out/Android/angle-android-arm.zip
           retention-days: 7
 
