@@ -221,6 +221,13 @@ jobs:
           
       - name: Get Ninja
         uses: turtlesec-no/get-ninja@1.1.0
+
+      - uses: Warchant/setup-mold@v1
+        with:
+          # mold version
+          version: 2.40.4 
+          # If true, will replace /usr/bin/ld with mold
+          make_default: true
           
       - name: Build ANGLE for Android with specific commit
         env:
