@@ -38,9 +38,9 @@ if not exist chrome\VERSION (
 
 :: Common GN args for all Windows builds
 set COMMON_ARGS=^
-    android_static_analysis="on" ^
-    target_os="android" ^
-    target_cpu="arm" ^
+    android_static_analysis=\"on\" ^
+    target_os=\"android\" ^
+    target_cpu=\"arm\" ^
     is_debug=false ^
     angle_enable_cl=true ^
     dcheck_always_on=true ^
@@ -60,7 +60,7 @@ set COMMON_ARGS=^
 
 :: Build for Android x64
 echo Building ANGLE for Android x64...
-call gn gen out/Android --args="!COMMON_ARGS!"
+call gn gen out/Android --args="%COMMON_ARGS%"
 if %ERRORLEVEL% NEQ 0 (
     echo Failed to generate x64 build files. Exiting.
     exit /b 1
