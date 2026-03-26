@@ -40,13 +40,13 @@ COMMON_ARGS='
 '
 
 
-:: Build for Android x64
+# Build for Android x64
 echo "Building ANGLE for Android x64..."
 gn gen out/Android --args="$COMMON_ARGS"
 
 ninja -C out/Android
 
-:: Return to script directory
+# Return to script directory
 cd $SCRIPT_DIR
 
 echo "."
