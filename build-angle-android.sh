@@ -33,11 +33,11 @@ COMMON_ARGS='
     chrome_pgo_phase=0
     is_official_build=true
     use_custom_libcxx=false
-    strip_debug_info=true
     build_with_chromium=false
     is_clang=true
     clang_use_chrome_plugins=false
 '
+    # strip_debug_info=true
 
 
 # Build for Android x64
