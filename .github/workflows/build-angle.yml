@@ -33,8 +33,7 @@ permissions:
   packages: read
 
 jobs:
-  
-get-angle-commit:
+  get-angle-commit:
     name: Determine ANGLE Commit Hash and Check Existing Release
     runs-on: ubuntu-latest
     outputs:
@@ -84,6 +83,7 @@ get-angle-commit:
             echo "Release already exists with ID: $RELEASE_EXISTS"
             echo "release_exists=true" >> $GITHUB_OUTPUT
           fi
+
   # build-mac:
   #   name: Build ANGLE for macOS
   #   needs: [get-angle-commit]
