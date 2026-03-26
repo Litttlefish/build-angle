@@ -38,16 +38,16 @@ if not exist chrome\VERSION (
 
 :: Common GN args for all Windows builds
 set COMMON_ARGS=^
-    android_static_analysis = on ^
-    target_os = android ^
-    target_cpu = arm ^
+    android_static_analysis=on ^
+    target_os=android ^
+    target_cpu=arm ^
     is_debug=false ^
-    angle_enable_cl = true ^
-    dcheck_always_on = true ^
-    is_component_build = true ^
+    angle_enable_cl=true ^
+    dcheck_always_on=true ^
+    is_component_build=true ^
     symbol_level=0 ^
-    use_reclient = false ^
-    use_siso = true ^
+    use_reclient=false ^
+    use_siso=true ^
     angle_standalone=true ^
     angle_build_tests=false ^
     chrome_pgo_phase=0 ^
