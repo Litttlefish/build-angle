@@ -24,7 +24,8 @@ COMMON_ARGS='
     is_debug=false
     angle_enable_cl=true
     dcheck_always_on=true
-    is_component_build=true
+    is_component_build=false
+    strip_debug_info=false
     symbol_level=0
     use_reclient=false
     use_siso=true
@@ -37,7 +38,7 @@ COMMON_ARGS='
     is_clang=true
     clang_use_chrome_plugins=false
 '
-    # strip_debug_info=true
+    # 
 
 
 # Build for Android x64
