@@ -41,6 +41,7 @@ echo "Building ANGLE for Android x64..."
 gn gen out/Android --args="$COMMON_ARGS"
 
 # autoninja -C out/Android
+. ./build/envsetup.sh
 m ANGLE_settings
 
 # Return to script directory
